@@ -7,5 +7,14 @@
 <body>
     <p th:text = "${person.getName()}">VALUE</p>
     <p th:text = "${person.getId()}">VALUE</p>
+    <br>
+    <hr>
+    <form th:method="GET" th:action="@{/people/{id}/edit(id=${person.getId()})}" th:object="${person}">
+        <input type="submit" value="Edit"/>
+    </form>
+    <br>
+    <form th:method="DELETE" th:action="@{/people/{id}(id=${person.getId()})}" th:object="${person}">
+        <input type="submit" value="Delete"/>
+    </form>
 </body>
 </html>
