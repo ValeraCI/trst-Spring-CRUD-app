@@ -6,11 +6,22 @@
 </head>
 <body>
     <form th:method="POST" th:action="@{/people}" th:object="${person}">
+        <div style="color:red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></div>
         <label for="name">Name</label>
         <input type="text" th:field="*{name}" id="name"/>
 
         <br>
 
+        <div style="color:red" th:if="${#fields.hasErrors('age')}" th:errors="*{age}"></div>
+        <label for="age">Age</label>
+        <input type="text" th:field="*{age}" id="age"/>
+
+        <br>
+
+        <div style="color:red" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></div>
+        <label for="email">Email</label>
+        <input type="text" th:field="*{email}" id="email"/>
+        <br>
         <input type="submit" value="Add Person"/>
     </form>
 </body>

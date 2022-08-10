@@ -5,10 +5,15 @@
     <title>Person</title>
 </head>
 <body>
-    <p th:text = "${person.getName()}">VALUE</p>
-    <p th:text = "${person.getId()}">VALUE</p>
+   <p th:text = "'Name: ' + ${person.getName()}">VALUE</p>
+
+   <p th:text = "'Id: ' +${person.getId()}">VALUE</p>
+
+   <p th:text = "'Age: ' +${person.getAge()}">VALUE</p>
+
+   <p th:text = "'Email: ' +${person.getEmail()}">VALUE</p>
     <br>
-    <hr>
+
     <form th:method="GET" th:action="@{/people/{id}/edit(id=${person.getId()})}" th:object="${person}">
         <input type="submit" value="Edit"/>
     </form>
