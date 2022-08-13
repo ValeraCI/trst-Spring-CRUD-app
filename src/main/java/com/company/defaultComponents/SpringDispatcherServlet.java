@@ -7,7 +7,7 @@ import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 
 
-public class SpringDispatcherSerlvet extends AbstractAnnotationConfigDispatcherServletInitializer {
+public class SpringDispatcherServlet extends AbstractAnnotationConfigDispatcherServletInitializer {
     @Override
     protected Class<?>[] getRootConfigClasses() {
         return null;
