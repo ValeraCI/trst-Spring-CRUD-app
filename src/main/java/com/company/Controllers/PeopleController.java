@@ -58,10 +58,8 @@ public class PeopleController {
                          BindingResult bindingResult,
                          @PathVariable("id") int id) {
         if(bindingResult.hasErrors()){
-            System.out.println("Хъюстон, у нас проблемы");
             return "people/edit";}
         personDAO.update(id, person);
-        System.out.println("Всё заебумба");
         return "redirect:/people";
     }
 
