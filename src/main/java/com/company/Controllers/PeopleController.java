@@ -43,10 +43,7 @@ public class PeopleController {
     @PostMapping()
     public String create(@ModelAttribute("person") @Valid Person person, BindingResult bindingResult){
         if(bindingResult.hasErrors()){
-            System.out.println("Хъюстон, у нас проблемы");
             return "people/new";}
-        personDAO.save(person);
-        System.out.println("Всё заебумба");
         return "redirect:/people";
     }
 
